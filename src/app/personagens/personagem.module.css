@@ -1,0 +1,71 @@
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+  color: #2d2d2d;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.imagem {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.nome {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #3a3a3a;
+  text-align: center;
+}
+
+.descricao {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.frase {
+  font-style: italic;
+  color: #7c3aed;
+  margin: 8px 0 8px 0;
+  text-align: center;
+}
+
+.papel {
+  font-size: 0.98rem;
+  color: #333;
+  margin-top: 6px;
+  text-align: center;
+}
