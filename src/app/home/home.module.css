@@ -1,0 +1,198 @@
+.homeContainer {
+  min-height: 100vh;
+  background: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 32px 0;
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(60,0,80,0.10);
+}
+.bannerImg {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 0;
+}
+.intro {
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.titulo {
+  font-size: 2.6rem;
+  color: #1a237e;
+  font-family: 'Merriweather', serif;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.descricao {
+  font-size: 1.18rem;
+  color: #3b2f1e;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 12px 24px;
+  display: inline-block;
+}
+.menuHome {
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(191,161,74,0.10);
+  padding: 16px 32px;
+}
+.menuHome ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menuHome li a {
+  color: #1a237e;
+  font-size: 1.15rem;
+  font-family: 'Merriweather', serif;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.menuHome li a:hover {
+  color: #bfa14a;
+}
+
+
+.headerHome {
+  width: 100%;
+  background: linear-gradient(90deg, #1a237e 80%, #bfa14a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(191,161,74,0.10);
+}
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  font-size: 2.2rem;
+  color: #bfa14a;
+}
+.headerTitle {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.menuHeader ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menuHeader li a {
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: 'Merriweather', serif;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.menuHeader li a:hover {
+  color: #bfa14a;
+}
+
+.divisoria {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #bfa14a 0%, #fff 100%);
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 12px;
+}
+
+.fraseImpacto {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #1a237e;
+  font-family: 'Merriweather', serif;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.botaoDestaque {
+  margin-top: 18px;
+  background: linear-gradient(90deg, #bfa14a 60%, #fff 100%);
+  color: #1a237e;
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(191,161,74,0.10);
+  transition: background 0.2s, color 0.2s;
+}
+.botaoDestaque:hover {
+  background: linear-gradient(90deg, #1a237e 60%, #bfa14a 100%);
+  color: #fff;
+}
+/* RODAPÉ */
+.rodapeHome {
+  width: 100%;
+  background: #1a237e;
+  color: #fff;
+  padding: 24px 0 12px 0;
+  margin-top: 48px;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -2px 12px rgba(191,161,74,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.rodapeBrasao {
+  font-size: 2.2rem;
+  color: #bfa14a;
+}
+.rodapeCreditos {
+  font-size: 1rem;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.rodapeCreditos a {
+  color: #bfa14a;
+  text-decoration: none;
+  font-weight: 600;
+}
+.rodapeCreditos a:hover {
+  color: #fff;
+}
+@media (max-width: 700px) {
+  .titulo {
+    font-size: 2rem;
+  }
+  .descricao {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+}

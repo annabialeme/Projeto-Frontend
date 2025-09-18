@@ -37,7 +37,10 @@ return (
     </div>
 
     <header className={styles.headerContent}>
-        <span className={styles.headerTitle}>MAXTON HALL</span>
+        <span className={styles.headerTitle}>
+          <span role="img" aria-label="brasão" style={{fontSize: '2rem', marginRight: '12px'}}>🛡️</span>
+          MAXTON HALL
+        </span>
         <nav>
         <ul className={styles.menu}>
             <li className={styles.menuItem}>Personagens</li>
@@ -55,22 +58,22 @@ return (
         </div>
     <div className={styles.grid}>
         {personagens.map(personagem => (
-        <div key={personagem.id} className={styles.card}>
-            <img
-            src={personagem.imagem_url ? personagem.imagem_url : '/public/file.svg'}
-            alt={personagem.nome}
-            className={styles.imagem}
-            />
-            <h2 className={styles.nome}>{personagem.nome}</h2>
-            <p className={styles.descricao}>{personagem.descricao}</p>
-            <blockquote className={styles.frase}>{personagem.frases}</blockquote>
-            <button
-            className={styles.botao}
-            onClick={() => window.location.href = `/detalhes/${personagem.id}`}
-            >
-            Ver mais
-            </button>
-        </div>
+            <div key={personagem.id} className={styles.card}>
+                <img
+                src={personagem.imagem_url ? personagem.imagem_url : '/public/file.svg'}
+                alt={personagem.nome}
+                className={styles.imagem}
+                />
+                <h2 className={styles.nome}>{personagem.nome}</h2>
+                <p className={styles.descricao}>{personagem.descricao}</p>
+                <blockquote className={styles.frase}>{personagem.frases}</blockquote>
+                <button
+                className={styles.botao}
+                onClick={() => window.location.href = `/detalhes/${personagem.id}`}
+                >
+                Ver mais
+                </button>
+            </div>
         ))}
     </div>
     </div>
