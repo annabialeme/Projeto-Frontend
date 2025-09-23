@@ -14,15 +14,27 @@ export default function Home() {
   const heroSlides = [
     {
       title: "Maxton Hall - Onde tudo começa",
-      subtitle: "O colégio de elite que mudará suas vidas para sempre"
+      subtitle: "O colégio de elite que mudará suas vidas para sempre",
+      button1: "Explore os Personagens",
+      button2: "Assista Agora",
+      link1: "/personagens",
+      link2: "https://www.youtube.com/watch?v=Raleeeupt6o"
     },
     {
       title: "Romance e Drama",
-      subtitle: "Histórias de amor que transcendem classes sociais"
+      subtitle: "Histórias de amor que transcendem classes sociais",
+      button1: "Veja os Casais",
+      button2: "Episódios Românticos",
+      link1: "/personagens",
+      link2: "https://www.youtube.com/watch?v=t1MHaflK2og"
     },
     {
       title: "Segredos e Mistérios",
-      subtitle: "Cada corredor esconde uma verdade"
+      subtitle: "Cada corredor esconde uma verdade",
+      button1: "Descubra os Segredos",
+      button2: "Teorias dos Fãs",
+      link1: "/curiosidades",
+      link2: "https://www.reddit.com/r/MaxtonHall/comments/1d37ryo/random_maxton_hall_thought/?tl=pt-br"
     }
   ];
 
@@ -69,12 +81,12 @@ export default function Home() {
 
 
   return (
-    <div className={styles.homeContainer}>
+    <div className={styles.container}>
       
       <header className={styles.header}>
-        <div className={styles.logoArea}>
-          <span className={styles.logo}>🛡️</span>
-          <h1 className={styles.headerTitle}>Maxton Hall</h1>
+        <div className={styles.logo}>
+          <span>🛡️</span>
+          <h1>Maxton Hall</h1>
         </div>
         <nav className={styles.nav}>
           <a href="/personagens">👥 Personagens</a>
@@ -87,28 +99,37 @@ export default function Home() {
 
   
       <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h2 className={styles.heroTitle}>{heroSlides[currentSlide].title}</h2>
-          <p className={styles.heroSubtitle}>{heroSlides[currentSlide].subtitle}</p>
-          <div className={styles.heroButtons}>
-            <button className={styles.btnPrimary}>Explore os Personagens</button>
-            <button className={styles.btnSecondary}>Assista Agora</button>
+        <div className={styles.content}>
+          <h2 className={styles.title}>{heroSlides[currentSlide].title}</h2>
+          <p className={styles.subtitle}>{heroSlides[currentSlide].subtitle}</p>
+          <div className={styles.buttons}>
+            <a href={heroSlides[currentSlide].link1} className={styles.btn}>
+              {heroSlides[currentSlide].button1}
+            </a>
+            <a 
+              href={heroSlides[currentSlide].link2} 
+              className={styles.btnSecond}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {heroSlides[currentSlide].button2}
+            </a>
           </div>
         </div>
-        <div className={styles.heroImage}>
+        <div className={styles.image}>
           <Image
             src="/banner.jpg"
             alt="Maxton Hall"
             width={600}
             height={400}
-            className={styles.bannerImg}
+            className={styles.banner}
           />
         </div>
-        <div className={styles.heroIndicators}>
+        <div className={styles.indicators}>
           {heroSlides.map((_, index) => (
             <button
               key={index}
-              className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
+              className={`${styles.dot} ${index === currentSlide ? styles.active : ''}`}
               onClick={() => setCurrentSlide(index)}
             />
           ))}
@@ -124,15 +145,12 @@ export default function Home() {
         </blockquote>
       </section>
 
-
-
-
       <section className={styles.highlights}>
         <h2 className={styles.sectionTitle}>Destaques</h2>
-        <div className={styles.highlightsGrid}>
+        <div className={styles.grid}>
           {highlights.map((item, index) => (
-            <div key={index} className={styles.highlightCard}>
-              <div className={styles.highlightIcon}>{item.icon}</div>
+            <div key={index} className={styles.card}>
+              <div className={styles.icon}>{item.icon}</div>
               <h3>{item.title}</h3>
               <h4>{item.subtitle}</h4>
               <p>{item.desc}</p>
@@ -146,38 +164,36 @@ export default function Home() {
 
       <section className={styles.stats}>
         <h2 className={styles.sectionTitle}>Em Números</h2>
-        <div className={styles.statsGrid}>
+        <div className={styles.grid}>
           {stats.map((stat, index) => (
             <div key={index} className={styles.statCard}>
-              <div className={styles.statNumber}>{stat.number}</div>
-              <div className={styles.statLabel}>{stat.label}</div>
+              <div className={styles.number}>{stat.number}</div>
+              <div className={styles.label}>{stat.label}</div>
             </div>
           ))}
         </div>
       </section>
 
-
- 
-      <section className={styles.whyWatch}>
+      <section className={styles.reasons}>
         <h2 className={styles.sectionTitle}>Por que assistir Maxton Hall?</h2>
-        <div className={styles.reasonsGrid}>
+        <div className={styles.grid}>
           <div className={styles.reason}>
-            <span className={styles.reasonIcon}>💕</span>
+            <span className={styles.icon}>💕</span>
             <h3>Romance Envolvente</h3>
             <p>Uma história de amor que quebra barreiras sociais</p>
           </div>
           <div className={styles.reason}>
-            <span className={styles.reasonIcon}>🎭</span>
+            <span className={styles.icon}>🎭</span>
             <h3>Drama Intenso</h3>
             <p>Reviravoltas que mantêm você grudado na tela</p>
           </div>
           <div className={styles.reason}>
-            <span className={styles.reasonIcon}>🏰</span>
+            <span className={styles.icon}>🏰</span>
             <h3>Cenários Deslumbrantes</h3>
             <p>Filmado em locações históricas impressionantes</p>
           </div>
           <div className={styles.reason}>
-            <span className={styles.reasonIcon}>⭐</span>
+            <span className={styles.icon}>⭐</span>
             <h3>Elenco Talentoso</h3>
             <p>Performances que tocam o coração</p>
           </div>
@@ -188,8 +204,8 @@ export default function Home() {
      
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <div className={styles.footerLogo}>🛡️</div>
-          <div className={styles.footerText}>
+          <div>🛡️</div>
+          <div>
             <span>© 2025 Maxton Hall | Projeto Frontend</span>
             <a href="https://github.com/annabialeme/Frontend-Projeto" target="_blank" rel="noopener noreferrer">
               GitHub
