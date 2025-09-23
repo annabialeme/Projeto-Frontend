@@ -71,7 +71,7 @@ return (
                 className={styles.botao}
                 onClick={() => window.location.href = `/detalhes/${personagem.id}`}
                 >
-                Ver mais
+                <span>Ver mais</span>
                 </button>
             </div>
         ))}
