@@ -65,8 +65,6 @@ return (
                 className={styles.imagem}
                 />
                 <h2 className={styles.nome}>{personagem.nome}</h2>
-                <p className={styles.descricao}>{personagem.descricao}</p>
-                <blockquote className={styles.frase}>{personagem.frases}</blockquote>
                 <button
                 className={styles.botao}
                 onClick={() => window.location.href = `/detalhes/${personagem.id}`}
