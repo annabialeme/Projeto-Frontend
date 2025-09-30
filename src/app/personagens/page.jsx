@@ -6,10 +6,12 @@ export default function Page() {
     const [personagens, setPersonagens] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
+
 useEffect(() => {
     async function fetchPersonagens() {
     try {
-        const response = await fetch('http://localhost:4000/api/personagens');
+        const response = await fetch(`${apiUrl}/personagens`)
         const json = await response.json();
         setPersonagens(json.data || []);
     } catch (error) {

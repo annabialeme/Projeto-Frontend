@@ -15,10 +15,10 @@ export default function DetalhePersonagem() {
     async function fetchData() {
       try {
         
-        const personagemResponse = await fetch(`http://localhost:4000/api/personagens/${id}`);
+        const personagemResponse = await fetch(`http://localhost:3000/api/personagens/${id}`);
         const personagemJson = await personagemResponse.json();
         
-        const detalhesResponse = await fetch(`http://localhost:4000/api/detalhes/${id}`);
+        const detalhesResponse = await fetch(`http://localhost:3000/api/detalhes/${id}`);
         const detalhesJson = await detalhesResponse.json();
         
         setPersonagem(personagemJson.data);

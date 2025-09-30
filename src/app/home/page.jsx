@@ -11,6 +11,8 @@ export default function Home() {
   const [currentQuote, setCurrentQuote] = useState(0);
 
 
+
+
   const heroSlides = [
     {
       title: "Maxton Hall - Onde tudo começa",
@@ -90,8 +92,7 @@ export default function Home() {
         </div>
         <nav className={styles.nav}>
           <a href="/personagens">👥 Personagens</a>
-          <a href="/sobre">📖 Sobre</a>
-          <a href="/curiosidades">🎓 Curiosidades</a>
+          <a href="/galeria">📖 Galeria</a>
           <a href="/contato">✉️ Contato</a>
         </nav>
       </header>
