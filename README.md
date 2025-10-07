@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎓 Projeto Frontend - Maxton Hall
 
-## Getting Started
+Bem-vindo ao **Projeto Frontend - Maxton Hall**, uma aplicação web desenvolvida para explorar o universo de Maxton Hall. Este projeto utiliza **Next.js**, **React**, e **CSS Modules** para criar uma interface moderna, interativa e responsiva.
 
-First, run the development server:
+---
 
-```bash
+## 📋 Funcionalidades
+
+- Página de **Personagens** com detalhes e imagens.
+- Página de **Quiz** interativo para descobrir qual personagem combina com você.
+- Página **Sobre Mim** com informações sobre o desenvolvedor e o propósito do projeto.
+- Design responsivo e acessível.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **Next.js**: Framework React para renderização do lado do servidor e geração de sites estáticos.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **CSS Modules**: Estilização modular para componentes.
+- **Fetch API**: Comunicação com o backend para obter dados dinâmicos.
+
+
+## 🛠️ Configuração do Projeto
+
+Siga os passos abaixo para configurar e executar o projeto na sua máquina.
+
+### 1️⃣ Clone o Repositório
+
+
+git clone https://github.com/annabialeme/Projeto-Frontend.git
+cd Projeto-Frontend
+
+
+### 2️⃣ Instale as Dependências
+
+
+npm install
+
+
+### 3️⃣ Configure as Variáveis de Ambiente
+
+Crie um arquivo `.env.local` na raiz do projeto com as seguintes configurações:
+
+NEXT_PUBLIC_API_URL=http://localhost:4000/api
+NEXT_PUBLIC_API_KEY=6JSaZI710b49Ow2DPPLJfpxdtoC5m0
+
+
+# URL da API Backend
+NEXT_PUBLIC_API_URL=http://localhost:4000/api
+
+
+Certifique-se de que o backend está rodando no endereço configurado.
+
+### 4️⃣ Inicie o Servidor de Desenvolvimento
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Abra [http://localhost:3000](http://localhost:3000) no navegador para visualizar o projeto.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌟 Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+- **/personagens**: Página com a lista de personagens e seus detalhes.
+- **/quiz**: Página com um quiz interativo.
+- **/sobre**: Página com informações sobre o desenvolvedor e o propósito do projeto.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔗 Link para o Repositório do Backend
 
-## Deploy on Vercel
+O backend deste projeto está disponível no seguinte repositório:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[Projeto Backend - Maxton Hall](https://github.com/annabialeme/Projeto-Backend)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
