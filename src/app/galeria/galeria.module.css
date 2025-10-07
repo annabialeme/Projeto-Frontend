@@ -1,3 +1,38 @@
+.botaoQuiz {
+  background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 18px;
+}
+.botaoQuiz:hover {
+  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+  transform: scale(1.05);
+}
+
+
+.quizButton h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.quizButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .box {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,6 +87,10 @@
 .img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
 }
 
 .foto p {
