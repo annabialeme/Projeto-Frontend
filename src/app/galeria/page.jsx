@@ -8,10 +8,12 @@ export default function Galeria() {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-    { src: "/banner.jpg", title: "Maxton Hall" },
-    { src: "/maxton.png", title: "Brasão" },
-    { src: "/banner.jpg", title: "Biblioteca" },
-    { src: "/maxton.png", title: "Salão Principal" }
+    { src: "/escola.jpg", title: "Maxton Hall" },
+    { src: "/ruby.jpg", title: "Casa de Ruby" },
+    { src: "/james.jpg", title: "Casa de James" },
+    { src: "/oxford.jpg", title: "Oxford" },
+    { src: "/campo.jpg", title: "Campo" },
+    { src: "/londres.jpg", title: "Londres" }
   ];
 
   const nextImage = () => {
