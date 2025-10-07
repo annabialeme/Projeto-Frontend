@@ -93,7 +93,8 @@ export default function Home() {
         <nav className={styles.nav}>
           <a href="/personagens">👥 Personagens</a>
           <a href="/galeria">📖 Galeria</a>
-          <a href="/contato">✉️ Contato</a>
+          <a href="/sobre">✉️ Sobre</a>
+          <a href="/quiz"> Quiz</a>
         </nav>
       </header>
 
