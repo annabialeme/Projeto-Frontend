@@ -8,6 +8,7 @@ export default function QuizPage() {
     const [loading, setLoading] = useState(true);
     const [answers, setAnswers] = useState({}); 
     const [result, setResult] = useState(null); 
+    const [feedback, setFeedback] = useState({});
 
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/quiz';
 
@@ -39,17 +40,21 @@ export default function QuizPage() {
 
     const handleSubmit = () => {
         let correctAnswers = 0;
+        const newFeedback = {};
         quiz.forEach((item) => {
+            newFeedback[item.id] = {};
             item.perguntas.forEach((pergunta, index) => {
-                if (
-                    answers[item.id] &&
-                    answers[item.id][index] === pergunta.resposta_correta
-                ) {
+                const userAnswer = answers[item.id]?.[index];
+                if (userAnswer === pergunta.resposta_correta) {
                     correctAnswers++;
+                    newFeedback[item.id][index] = 'acertou';
+                } else {
+                    newFeedback[item.id][index] = 'errou';
                 }
             });
         });
         setResult(correctAnswers);
+        setFeedback(newFeedback);
     };
 
     if (loading) {
@@ -80,6 +85,9 @@ export default function QuizPage() {
                         <li className={styles.menuItem}>
                             <Link href="/personagens">Personagens</Link>
                         </li>
+                         <li className={styles.menuItem}>
+                            <Link href="/galeria">Galeria</Link>
+                        </li>
                         <li className={styles.menuItem}>
                             <Link href="/sobre">Sobre</Link>
                         </li>
@@ -88,7 +96,7 @@ export default function QuizPage() {
                 </nav>
             </header>
 
-          
+        
             <div className={styles.tituloContainer}>
                 <h1 className={styles.titulo}>Teste seus conhecimentos!</h1>
                 <p className={styles.redacao}>
@@ -103,45 +111,37 @@ export default function QuizPage() {
                         <h2 className={styles.quizTitle}>{item.titulo}</h2>
                         <p className={styles.quizDescription}>{item.descricao}</p>
                         <div className={styles.questions}>
-                            {item.perguntas.map((pergunta, index) => (
-                                <div key={index} className={styles.questionCard}>
-                                    <h3 className={styles.question}>{pergunta.pergunta}</h3>
-                                    <div className={styles.options}>
-                                        <button
-                                            className={`${styles.optionButton} ${
-                                                answers[item.id]?.[index] === 'A' ? styles.selected : ''
-                                            }`}
-                                            onClick={() => handleAnswer(item.id, index, 'A')}
-                                        >
-                                            A: {pergunta.alternativa_a}
-                                        </button>
-                                        <button
-                                            className={`${styles.optionButton} ${
-                                                answers[item.id]?.[index] === 'B' ? styles.selected : ''
-                                            }`}
-                                            onClick={() => handleAnswer(item.id, index, 'B')}
-                                        >
-                                            B: {pergunta.alternativa_b}
-                                        </button>
-                                        <button
-                                            className={`${styles.optionButton} ${
-                                                answers[item.id]?.[index] === 'C' ? styles.selected : ''
-                                            }`}
-                                            onClick={() => handleAnswer(item.id, index, 'C')}
-                                        >
-                                            C: {pergunta.alternativa_c}
-                                        </button>
-                                        <button
-                                            className={`${styles.optionButton} ${
-                                                answers[item.id]?.[index] === 'D' ? styles.selected : ''
-                                            }`}
-                                            onClick={() => handleAnswer(item.id, index, 'D')}
-                                        >
-                                            D: {pergunta.alternativa_d}
-                                        </button>
+                            {item.perguntas.map((pergunta, index) => {
+                                const userAnswer = answers[item.id]?.[index];
+                                const showFeedback = result !== null;
+                                const isCorrect = feedback[item.id]?.[index] === 'acertou';
+                                const isWrong = feedback[item.id]?.[index] === 'errou';
+                                return (
+                                    <div key={index} className={styles.questionCard}>
+                                        <h3 className={styles.question}>{pergunta.pergunta}</h3>
+                                        <div className={styles.options}>
+                                            {['A', 'B', 'C', 'D'].map((alt) => (
+                                                <button
+                                                    key={alt}
+                                                    className={`${styles.optionButton} ${userAnswer === alt ? styles.selected : ''}`}
+                                                    onClick={() => handleAnswer(item.id, index, alt)}
+                                                    disabled={result !== null}
+                                                >
+                                                    {alt}: {pergunta[`alternativa_${alt.toLowerCase()}`]}
+                                                </button>
+                                            ))}
+                                        </div>
+                                        {showFeedback && (
+                                            <div className={isCorrect ? styles.correct : styles.wrong}>
+                                                {isCorrect ? 'Acertou!' : 'Errou!'}
+                                                {!isCorrect && (
+                                                    <span> (Correta: {pergunta.resposta_correta})</span>
+                                                )}
+                                            </div>
+                                        )}
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 ))}
